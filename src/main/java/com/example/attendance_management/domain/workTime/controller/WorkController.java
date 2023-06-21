@@ -19,8 +19,7 @@ public class WorkController {
     private final WorkService workService;
 
     @GetMapping
-    public ResponseEntity<BasicResponse> getWorkHistory(@RequestParam(required = false) LocalDate startDate,
-                                                        @RequestParam(required = false) LocalDate endDate) {
+    public ResponseEntity<BasicResponse> getWorkHistory(@RequestParam(required = false) LocalDate startDate, @RequestParam(required = false) LocalDate endDate) {
         return workService.getWorkHistory(startDate, endDate);
     }
 

@@ -3,16 +3,13 @@ package com.example.attendance_management.domain.workTime.service;
 import com.example.attendance_management.domain.member.domain.Member;
 import com.example.attendance_management.domain.member.enums.Role;
 import com.example.attendance_management.domain.member.repository.MemberRepository;
-import com.example.attendance_management.domain.remoteWork.domain.RemoteWork;
 import com.example.attendance_management.domain.workTime.domain.WorkTime;
-import com.example.attendance_management.domain.workTime.dto.WorkTimeRequest;
 import com.example.attendance_management.domain.workTime.repository.WorkTimeRepository;
 import com.example.attendance_management.global.response.BasicResponse;
 import com.example.attendance_management.global.security.JWTProvider;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.jdbc.Work;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -149,7 +146,7 @@ public class WorkServiceImpl implements WorkService {
         return new ResponseEntity<>(basicResponse, basicResponse.getHttpStatus());
     }
 
-    @Scheduled(cron = "0/10 * * * * *")
+    @Scheduled(cron = "0 0 4 * * *")
     public void workTimeSetting() {
         try {
             List<Member> members = memberRepository.findAllByRole(Role.USER.getKey());

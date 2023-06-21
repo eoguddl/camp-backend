@@ -22,6 +22,8 @@ public class MemberResponse {
 
     private String position;
 
+    private WorkTime todayWorkTime;
+
     private List<WorkTime> workTimes;
 
 }

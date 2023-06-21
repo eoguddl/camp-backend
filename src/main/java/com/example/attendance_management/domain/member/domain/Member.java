@@ -31,6 +31,9 @@ public class Member {
     @Column(nullable = false)
     private String password;
 
+    // 근무지
+    private String workPlace;
+
     // 부서
     @Column(nullable = false)
     private String department;
@@ -47,15 +50,5 @@ public class Member {
 
     @Column(nullable = false)
     private String role;
-
-    public MemberResponse toResponse() {
-        return MemberResponse.builder()
-                .id(this.id)
-                .name(this.name)
-                .username(this.username)
-                .position(this.position)
-                .workTimes(this.workTimes)
-                .build();
-    }
 
 }

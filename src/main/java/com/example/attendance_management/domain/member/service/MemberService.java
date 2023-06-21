@@ -1,6 +1,7 @@
 package com.example.attendance_management.domain.member.service;
 
 import com.example.attendance_management.domain.member.dto.ChangePasswordRequest;
+import com.example.attendance_management.domain.member.dto.CreateUserDto;
 import com.example.attendance_management.domain.member.dto.LoginRequest;
 import com.example.attendance_management.global.response.BasicResponse;
 import org.springframework.http.ResponseEntity;
@@ -14,5 +15,7 @@ public interface MemberService {
     ResponseEntity<BasicResponse> login(LoginRequest loginRequest);
 
     ResponseEntity<BasicResponse> changePassword(ChangePasswordRequest changePasswordRequest);
+
+    ResponseEntity<BasicResponse> createUser(CreateUserDto dto);
 
 }

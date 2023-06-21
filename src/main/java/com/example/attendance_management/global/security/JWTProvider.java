@@ -95,9 +95,11 @@ public class JWTProvider {
     public Optional<Member> findMemberByToken(HttpServletRequest httpServletRequest) {
         String bearerToken = resolveToken(httpServletRequest);
 
-        if (validateToken(bearerToken)) {
+        if (!validateToken(bearerToken)) {
             return Optional.empty();
         }
+
+        System.out.println("jafjasdfkdslafjasldljkasjlkfjkl");
 
         String token = bearerToken.split(" ")[1].trim();
         String username = Jwts.parserBuilder()
